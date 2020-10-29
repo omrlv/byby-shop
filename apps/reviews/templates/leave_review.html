@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+    {% include 'head.html' with css='leave_review' title='Оставить отзыв' %}
+  <body class="u-body">
+    {% include 'header.html' %}
+    <section class="u-black u-clearfix u-section-1" id="carousel_7a93">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h1 class="u-text u-text-body-alt-color u-text-default u-text-1">Ваш отзыв</h1>
+                  <p class="u-custom-font u-heading-font u-text u-text-body-alt-color u-text-2">На этой страничке вы можете оставить свой отзыв, который будет отображен среди всех отзывов на главной странице</p>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <div class="u-expanded-width u-form u-form-1">
+                    <form action="{% url 'reviews:reviews' %}" method="POST" class="u-clearfix u-form-spacing-30 u-inner-form" style="padding: 10px">
+                        {% csrf_token %}
+                      <div class="u-form-group u-form-name u-form-group-1">
+                        <label for="id_name" class="u-label u-text-body-alt-color u-label-1">ФИО</label>
+                        <input type="text" placeholder="Ваше имя и фамилия" id="id_name" name="name" class="u-border-radius-0 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-group u-form-message u-form-group-2">
+                        <label for="id_text" class="u-label u-text-body-alt-color u-label-2">Текст отзыва</label>
+                        <textarea placeholder="" rows="4" cols="50" id="id_text" name="text" class="u-border-radius-0 u-input u-input-rectangle u-white" required="" maxlength="200"></textarea>
+                      </div>
+
+                        <div class="u-align-left u-form-group u-form-submit u-form-group-4">
+                            <input type="submit" class="u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" data-animation-name="flipIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="X">
+                        </div>
+                      <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a490"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-small-text u-text u-text-default u-text-variant u-text-1">BYBishop company<br>2011 - 2020
+        </p>
+      </div></footer>
+  </body>
+</html>
